@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import jsonData from "./data.json";
 
 const ChipComponent = () => {
+  // State to manage input value
   const [inputValue, setInputValue] = useState("");
+  // State to manage selected chips
   const [chips, setChips] = useState([]);
+  // State to manage available items
   const [availableItems, setAvailableItems] = useState([]);
 
+  // Fetch initial data on component mount
   useEffect(() => {
     setAvailableItems(
       jsonData.email_accounts.map((account) => ({
@@ -15,10 +19,12 @@ const ChipComponent = () => {
     );
   }, []);
 
+  // Handle input change event
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
+  // Handle click on an available item
   const handleItemClick = (item) => {
     setChips([...chips, item]);
     setAvailableItems(
@@ -29,11 +35,13 @@ const ChipComponent = () => {
     setInputValue("");
   };
 
+  // Handle click on a chip to remove it
   const handleChipRemove = (chipToRemove) => {
     setChips(chips.filter((chip) => chip !== chipToRemove));
     setAvailableItems([...availableItems, chipToRemove]);
   };
 
+  // Handle Backspace key press to remove the last chip
   const handleInputKeyDown = (event) => {
     if (event.key === "Backspace" && inputValue === "") {
       const lastChip = chips[chips.length - 1];
@@ -45,6 +53,7 @@ const ChipComponent = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto p-4">
+      {/* Render selected chips */}
       <div className="flex flex-wrap gap-2">
         {chips.map((chip) => (
           <div
@@ -53,6 +62,7 @@ const ChipComponent = () => {
           >
             <div className="flex items-center">
               <span>
+                {/* Icon for each chip */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -67,7 +77,9 @@ const ChipComponent = () => {
                 </svg>
               </span>
 
+              {/* Display chip username */}
               {chip.username}
+              {/* Button to remove chip */}
               <span
                 className="items-center p-1 text-sm text-red-500 bg-transparent rounded-full cursor-pointer"
                 onClick={() => handleChipRemove(chip)}
@@ -79,6 +91,7 @@ const ChipComponent = () => {
         ))}
       </div>
 
+      {/* Render input for typing and available items */}
       <div className="relative">
         <input
           type="text"
@@ -88,6 +101,7 @@ const ChipComponent = () => {
           className="input-field text-blue-800 placeholder-gray-600 bg-blue border border-blue-900 hover:border-blue-500 rounded-3xl p-3 mt-2 w-full"
           placeholder="Type Here..."
         />
+        {/* Display available items if input has value */}
         {inputValue && (
           <div className="bg-slate-200 text-center rounded-2xl absolute top-13 left-0 w-full md:w-auto">
             {availableItems
