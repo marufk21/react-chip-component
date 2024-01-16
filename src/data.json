@@ -1,0 +1,44 @@
+{
+  "email_accounts": [
+    {
+      "username": "John-Doe",
+      "email": "john.doe@gmail.com"
+    },
+    {
+      "username": "Jane-Smith",
+      "email": "jane.smith@yahoo.com"
+    },
+    {
+      "username": "Mike-Jones",
+      "email": "mike.jones@hotmail.com"
+    },
+    {
+      "username": "Emily-White",
+      "email": "emily.white@mail.com"
+    },
+    {
+      "username": "Alex-Green",
+      "email": "alex.green@protonmail.com"
+    },
+    {
+      "username": "Olivia-Brown",
+      "email": "olivia.brown@icloud.com"
+    },
+    {
+      "username": "Daniel-Ward",
+      "email": "daniel.ward@zoho.com"
+    },
+    {
+      "username": "Sophie-Miller",
+      "email": "sophie.miller@fastmail.com"
+    },
+    {
+      "username": "Max-Roberts",
+      "email": "max.roberts@mailinator.com"
+    },
+    {
+      "username": "Lily-Jenkins",
+      "email": "lily.jenkins@yandex.com"
+    }
+  ]
+}
