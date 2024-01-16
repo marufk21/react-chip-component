@@ -49,7 +49,7 @@ const ChipComponent = () => {
         {chips.map((chip) => (
           <div
             key={chip.username}
-            className="inline-flex rounded-2xl items-center px-3 me-2 text-sm font-medium text-blue-800 bg-blue-100 dark:bg-blue-900 dark:text-blue-300 placeholder-black"
+            className="inline-flex rounded-2xl items-center px-3 me-2 text-sm font-medium text-blue-800 bg-blue-100 dark:bg-blue-900 dark:text-blue-300 placeholder-black mb-2 md:mb-0"
           >
             <div className="flex items-center">
               <span>
@@ -89,7 +89,7 @@ const ChipComponent = () => {
           placeholder="Type Here..."
         />
         {inputValue && (
-          <div className="bg-slate-200 text-center rounded-2xl absolute top-13 left-0">
+          <div className="bg-slate-200 text-center rounded-2xl absolute top-13 left-0 w-full md:w-auto">
             {availableItems
               .filter((item) =>
                 item.username.toLowerCase().includes(inputValue.toLowerCase())
@@ -100,8 +100,8 @@ const ChipComponent = () => {
                   className="available-item cursor-pointer text-blue-500 p-3 hover:bg-blue-50 border-b border-blue-100"
                   onClick={() => handleItemClick(item)}
                 >
-                  <div className="flex items-center">
-                    <span className="flex items-center">
+                  <div className="flex flex-col md:flex-row items-center">
+                    <span className="flex items-center mb-2 md:mb-0">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -118,7 +118,7 @@ const ChipComponent = () => {
                         {item.username}
                       </span>
                     </span>
-                    <span className="ml-12 text-base font-normal">
+                    <span className="ml-2 text-base font-normal">
                       {item.email}
                     </span>
                   </div>
