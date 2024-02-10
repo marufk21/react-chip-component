@@ -17,7 +17,7 @@ Link: https://react-chip-component.netlify.app/
 - React
 - Tailwind CSS
 
-# Getting Started
+## Run
 
 Follow these steps to quickly integrate the React Chip Component into your project:
 
